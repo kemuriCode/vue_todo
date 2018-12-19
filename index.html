@@ -5,10 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="https://ez-css.now.sh"/>
 </head>
 <body>
-  
+  <main id="app">
+    <h3>{{title}}</h3>
+    <form>
+      <label for="newTodo">New Todo</label>
+      <input type="text" name="newTodo" id="newTodo" value="">
+      <button type="submit" name="button">Add</button>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="app.js" charset="utf-8"></script>
 </body>
 </html>
