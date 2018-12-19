@@ -6,6 +6,11 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="https://ez-css.now.sh"/>
+<style>
+  .done {
+    text-decoration: line-through;
+  }
+</style>
 </head>
 <body>
   <main id="app">
@@ -15,7 +20,13 @@
       <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
       <button type="submit" name="button">Add</button>
     </form>
-    <h4>{{newTodo}}</h4>
+    <button @click="allDone" type="button" name="button">All done</button>
+    <ul>
+      <li v-for="todo in todos">{{todo.title}}</li>
+        <input type="checkbox" v-model="todo.done">
+        <span :class="{ done: todo.done }">{{todo.title}}</span>
+        <button @click="removeTodo(todo)">Remove</button>
+    </ul>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
